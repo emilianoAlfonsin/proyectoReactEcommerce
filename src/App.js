@@ -1,10 +1,14 @@
 import React from 'react'
 import './App.css';
 import { Header } from './components/Header';
+import { ItemListContainer } from './components/Greeting/ItemListContainer';
 
 const App = () => {
   return (
-    <Header/>
+    <>
+      <Header/>
+      <ItemListContainer/>
+    </>
   )
 }
 

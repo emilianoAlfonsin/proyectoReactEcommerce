@@ -1,0 +1,27 @@
+.header-container {
+    background-color: #F9230A;
+    
+    .header {
+        margin: 0 12rem;
+        padding: 20px 0;
+    
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        .header-logo {
+            max-width: 8rem;
+        }
+    
+    }
+    
+    .navbar {
+        justify-content: space-around;
+        
+        .navlink {
+            margin: 1rem 2rem;
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+}

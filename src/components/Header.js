@@ -1,5 +1,4 @@
-import React from "react"
-import './Header.css'
+import './Header.scss'
 import logoWhite from '../assets/logo-white.png'
 // import a from '@mui/material/Button';
 
