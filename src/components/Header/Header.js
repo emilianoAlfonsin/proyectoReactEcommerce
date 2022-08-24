@@ -1,7 +1,8 @@
 import './Header.scss'
-import logoWhite from '../assets/logo-white.png'
+import logoWhite from '../../assets/logo-white.png'
 // import a from '@mui/material/Button';
-
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Badge } from '@mui/material';
 
 export const Header = () => {
     return (
@@ -15,6 +16,7 @@ export const Header = () => {
                     <a className="navlink" href="#" >Catalogo</a>
                     <a className="navlink" href="#" >Quienes somos</a>
                     <a className="navlink" href="#" >Contacto</a>
+                    <Badge className='navlink'><ShoppingCartIcon/></Badge>
                 </div>
             </div>
         </div>
