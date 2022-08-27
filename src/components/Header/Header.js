@@ -1,6 +1,5 @@
 import './Header.scss'
 import logoWhite from '../../assets/logo-white.png'
-// import a from '@mui/material/Button';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Badge } from '@mui/material';
 

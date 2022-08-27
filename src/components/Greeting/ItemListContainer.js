@@ -1,3 +1,4 @@
+import { Counter } from '../ItemCount/ItemCount'
 import './ItemListContainer.scss'
 
 export const ItemListContainer = ({user="Homero Simpson", adress="Siempreviva 742, Springfield"}) => {
@@ -10,6 +11,7 @@ export const ItemListContainer = ({user="Homero Simpson", adress="Siempreviva 74
             <p className='adress'>
                 Su producto será entregado en {adress}
             </p>
+            <Counter/>
         </div>
     )
 }
