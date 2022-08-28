@@ -8,9 +8,9 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 
 
-export const ItemCard = (producto) => {
+export const ItemCard = ({producto}) => {
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ maxWidth: 320 }}>
         <CardActionArea>
             <CardMedia
             component="img"

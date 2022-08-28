@@ -35,7 +35,7 @@ export const productos = [
     },
     {
         id: 5,
-        nombre: 'Esuinero para ducha',
+        nombre: 'Esquinero para ducha',
         precio: 1600,
         img: './assets/product-img/esquinero.png',
         stock: 30,
