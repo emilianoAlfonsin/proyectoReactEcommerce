@@ -7,8 +7,9 @@ import {ItemList} from '../ItemList/Itemlist'
 
 
 
-
 export const ItemListContainer = ({user="Homero Simpson", adress="Siempreviva 742, Springfield"}) => {
+   
+   const [productos, setProductos] = useState([])
 
    useEffect(() => {
       pedirDatos()
@@ -20,7 +21,6 @@ export const ItemListContainer = ({user="Homero Simpson", adress="Siempreviva 74
          })
    }, [])
 
-   const [productos, setProductos] = useState([])
 
 
    return (

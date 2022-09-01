@@ -1,9 +1,10 @@
 import { productos } from "../data/data"
 
 export const pedirDatos = () => {
-    return new Promise( (resolve, reject) => {
-            
-                resolve(productos)
-            
-        } )
+        return new Promise ((resolve, reject) => {
+                setTimeout(() =>{
+                resolve (productos)
+                }, 2000)
+        })
 }
+
