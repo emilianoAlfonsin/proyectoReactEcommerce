@@ -1,0 +1,14 @@
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+
+    .greeting {
+        margin: 2rem auto;
+        
+        .greeting-title, .adress {
+            font-style: italic;
+        }
+    
+        
+    }
+}
