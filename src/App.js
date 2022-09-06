@@ -16,8 +16,9 @@ const App = () => {
     <div className='App'>
       <Header/>
       <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/Tienda' element={<ItemListContainer/>} />
+        {/* <Route path='/' element={<Home/>} /> */}
+        <Route path='/' element={<ItemListContainer/>} />
+        <Route path='/Tienda/:categoryId' element={<ItemListContainer/>} />
         <Route path='/Product/:prodId' element={<ItemDetailContainer/>} />
         <Route path='*' element={<Navigate to='/' />} />
       </Routes>

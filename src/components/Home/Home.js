@@ -1,5 +1,5 @@
 import React from 'react'
-import {  CarouselIndex } from '../Carousel/Carousel'
+import CarouselIndex from '../Carousel/Carousel'
 
 
 const Home = () => {

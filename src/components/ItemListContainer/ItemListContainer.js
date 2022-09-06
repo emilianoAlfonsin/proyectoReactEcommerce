@@ -1,40 +1,46 @@
 import './ItemListContainer.scss'
+import ItemList from '../ItemList/Itemlist'
 import { useEffect, useState } from 'react'
 import { pedirDatos } from '../../helpers/pedirDatos'
-import ItemList from '../ItemList/Itemlist'
+import { useParams } from 'react-router-dom'
 
 
 
-const ItemListContainer = ({user="Homero Simpson", adress="Siempreviva 742, Springfield"}) => {
+const ItemListContainer = () => {
    
    const [productos, setProductos] = useState([])
+   const [loading, setLoading] = useState(true)
+   const {categoryId} = useParams()
+
 
    useEffect(() => {
+      setLoading(true)
+
       pedirDatos()
          .then( (res) => {
+            if (!categoryId) {
                setProductos(res)
+            }else{
+               setProductos(res.filter ((prod) => prod.categoria === categoryId))
+            }
          })
          .catch( (error) => {
                console.log(error)
          })
-   }, [])
+         .finally(() => {
+            setLoading(false)
+         })
+   }, [categoryId])
 
 
 
    return (
       <div className='container'>
-         <div className='greeting'>
-            <h3 className='greeting-title'>
-               Bienvenido {user}
-            </h3>
-            <p className='adress'>
-               Su producto será entregado en {adress}
-            </p>
-         </div>
-         <hr/>
-         <div>
-               <ItemList productos={productos}/>
-         </div>
+         {
+            loading 
+            ? <h2>...</h2>
+            : <ItemList productos={productos}/>
+         }
       </div>
    )
 }

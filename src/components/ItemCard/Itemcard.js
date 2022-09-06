@@ -31,6 +31,7 @@ const ItemCard = ({producto}) => {
                 </CardActionArea>
             </Card>
         </Link>
+    
     );  
 }
 

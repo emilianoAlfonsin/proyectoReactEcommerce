@@ -1,4 +1,5 @@
-import { Button } from "@mui/material";
+
+import Button from 'react-bootstrap/Button'
 import { useState } from "react";
 import './ItemCount.scss'
 
@@ -12,16 +13,16 @@ export const Counter = () => {
         setCounter (counter + 1)
     }
 
-    const handlerestar = () => {
+    const handleRestar = () => {
         setCounter (counter - 1)
     }
 
     return (
         <div className="counter-container">
-            <h4 className="counter-title">Contador</h4>
-            <Button onClick={handlerestar}>-</Button>
-            <span>{counter}</span>
-            <Button onClick={handleSumar}>+</Button>
+            <h6 className="counter-title">Cantidad</h6>
+            <Button variant="oulined-secondary" size="sm" onClick={handleRestar}>-</Button>
+            <span className='mx-3'>{counter}</span>
+            <Button variant="oulined-secondary" size="sm" onClick={handleSumar}>+</Button>
         </div>
     )
 }

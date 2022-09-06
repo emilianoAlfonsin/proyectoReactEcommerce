@@ -7,13 +7,14 @@ const Header = () => {
         <div className="header-container">
             <div className="header">
                 <div className="header-logo">
-                    <img className="header-logo" src="./assets/logo/logo-full.png" alt="logo"/>
+                    <img className="header-logo" src="/assets/logo/logo-full.png" alt="logo"/>
                 </div>
                 <div className="navbar">
-                    <Link className="navlink" to="/" >Home</Link>
-                    <Link className="navlink" to="/Tienda" >Tienda</Link>
-                    <Link className="navlink" to="/About" >Quienes somos</Link>
-                    <Link className="navlink" to="/Contacto" >Contacto</Link>
+                    {/* <Link className="navlink" to="/" >Home</Link> */}
+                    <Link className="navlink" to="/" >Tienda</Link>
+                    <Link className="navlink" to="/Tienda/juguetes" >Jugetes</Link>
+                    <Link className="navlink" to="/Tienda/alimentacion" >Alimentación</Link>
+                    <Link className="navlink" to="/Tienda/higiene" >Higiene</Link>
                     <Link className='navlink' to='/Carrito' ><ShoppingCartIcon/></Link>
                 </div>
             </div>
