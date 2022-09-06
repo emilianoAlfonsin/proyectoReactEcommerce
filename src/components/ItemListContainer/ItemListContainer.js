@@ -1,13 +1,11 @@
-// import { ItemCard } from '../ItemCard/Itemcard'
-import { Counter } from '../ItemCount/ItemCount'
 import './ItemListContainer.scss'
 import { useEffect, useState } from 'react'
 import { pedirDatos } from '../../helpers/pedirDatos'
-import {ItemList} from '../ItemList/Itemlist'
+import ItemList from '../ItemList/Itemlist'
 
 
 
-export const ItemListContainer = ({user="Homero Simpson", adress="Siempreviva 742, Springfield"}) => {
+const ItemListContainer = ({user="Homero Simpson", adress="Siempreviva 742, Springfield"}) => {
    
    const [productos, setProductos] = useState([])
 
@@ -40,3 +38,5 @@ export const ItemListContainer = ({user="Homero Simpson", adress="Siempreviva 74
       </div>
    )
 }
+
+export default ItemListContainer

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Carousel } from 'react-bootstrap'
 
-export const CarouselIndex = () => {
+const CarouselIndex = () => {
     return (
         <div>
             <Carousel fade>
@@ -27,3 +27,5 @@ export const CarouselIndex = () => {
         </div>
     )
     }
+
+export default CarouselIndex

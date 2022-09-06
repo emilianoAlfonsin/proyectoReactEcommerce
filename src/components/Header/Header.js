@@ -2,7 +2,7 @@ import './Header.scss'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from 'react-router-dom'
 
-export const Header = () => {
+const Header = () => {
     return (
         <div className="header-container">
             <div className="header">
@@ -20,3 +20,5 @@ export const Header = () => {
         </div>
     )
 }
+
+export default Header

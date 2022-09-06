@@ -3,14 +3,16 @@ import { Card } from "react-bootstrap"
 import { Counter } from "../ItemCount/ItemCount"
 
 
-export const ItemDetail = ({item}) => {
+const ItemDetail = ({producto}) => {
     return (
         <div>
             <Card>
-                <Card.Img variant="left" src={item.img}/>
+                <Card.Img variant="left" src={producto.img}/>
                 <Card.Body>
-                    <Card.Title>{item.nombre}</Card.Title>
-                    <Card.Text>{item.descripcion}</Card.Text>
+                    <Card.Title>{producto.nombre}</Card.Title>
+                    <Card.Text>{producto.descripcion}</Card.Text>
+                    <Card.Text>{producto.categoria}</Card.Text>
+                    <Card.Text>{producto.precio}</Card.Text>
                     <Counter/>
                     <Button variant="primary">Agregar producto</Button>
                 </Card.Body>
@@ -20,3 +22,4 @@ export const ItemDetail = ({item}) => {
     )
 }
 
+export default ItemDetail

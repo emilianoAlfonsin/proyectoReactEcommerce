@@ -2,7 +2,7 @@ import React from 'react'
 import {  CarouselIndex } from '../Carousel/Carousel'
 
 
-export const Home = () => {
+const Home = () => {
     return (
         <div>
             <CarouselIndex/>
@@ -10,3 +10,4 @@ export const Home = () => {
     )
 }
 
+export default Home

@@ -9,7 +9,7 @@ import {Link} from 'react-router-dom'
 
 
 
-export const ItemCard = ({producto}) => {
+const ItemCard = ({producto}) => {
     return (
         <Link className='card-link' to={`/Product/${producto.id}`}>
             <Card sx={{ maxWidth: 320 }}>
@@ -33,4 +33,6 @@ export const ItemCard = ({producto}) => {
         </Link>
     );  
 }
+
+export default ItemCard
 

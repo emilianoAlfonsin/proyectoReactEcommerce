@@ -1,10 +1,10 @@
 import React from "react"
-import { ItemCard } from "../ItemCard/Itemcard"
+import ItemCard from "../ItemCard/Itemcard"
 import './Itemlist.scss'
 
 
 
-export const ItemList = ( {productos = []} ) => {
+const ItemList = ( {productos = []} ) => {
 
     return (
         <div>
@@ -17,3 +17,4 @@ export const ItemList = ( {productos = []} ) => {
     )
 }
 
+export default ItemList
