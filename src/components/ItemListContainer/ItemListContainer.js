@@ -39,7 +39,7 @@ const ItemListContainer = () => {
          {
             loading 
             ? <Spinner animation="border" />
-            : <ItemList prouctos={productos}/>
+            : <ItemList productos={productos}/>
          }
       </div>
    )
