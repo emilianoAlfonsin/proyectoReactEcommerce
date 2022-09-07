@@ -21,6 +21,12 @@
             color: rgb(97, 94, 94);
             text-decoration: none;
             font-weight: 400;
+            &:hover{
+            transform: scale(1.2);
+            transition: all 400ms;
+            text-shadow: 3px 3px 3px #fff;
+            }
         }
+            
     }
 }

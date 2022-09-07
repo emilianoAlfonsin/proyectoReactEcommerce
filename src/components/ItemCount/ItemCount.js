@@ -14,7 +14,9 @@ export const Counter = () => {
     }
 
     const handleRestar = () => {
-        setCounter (counter - 1)
+        if ( counter > 1 ) {
+            setCounter (counter - 1)
+        }
     }
 
     return (
