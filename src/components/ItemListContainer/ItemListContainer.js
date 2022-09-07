@@ -1,10 +1,9 @@
 import './ItemListContainer.scss'
-import ItemList from '../ItemList/ItemList'
 import { useEffect, useState } from 'react'
 import { pedirDatos } from '../../helpers/pedirDatos'
 import { useParams } from 'react-router-dom'
 import Spinner from 'react-bootstrap/Spinner'
-
+import ItemList from '../ItemList/ItemList'
 
 const ItemListContainer = () => {
    
