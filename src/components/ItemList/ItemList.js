@@ -11,7 +11,7 @@ const ItemList = ( { productos = [] } ) => {
             <h2 className="catalog-title">Productos</h2>
             <hr/>
             <div className="catalog-container">
-                { productos.map((prod) => <ItemCard className="catalog-item" producto={prod} key={prod.id}/>)} 
+                { productos.map((prod) => <ItemCard  producto={prod} key={prod.id}/>)} 
             </div>
         </div>
     )

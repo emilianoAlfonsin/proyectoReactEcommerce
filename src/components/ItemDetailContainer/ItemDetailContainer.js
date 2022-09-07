@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { pedirDatos } from '../../helpers/pedirDatos'
 import ItemDetail from '../ItemDetail/ItemDetail'
@@ -25,15 +25,13 @@ const ItemDetailContainer = () => {
                 setLoading(false)
             })
             
-    }, [])
+    }, [prodId]) 
 
     return (
-        <div className='container'>
+        <div >
             {
                 loading
-                ?   <h4 className='mx-auto'>
-                    Cargando <Spinner animation="border" variant='secondary'/>
-                    </h4>
+                ?   <h4>Cargando <Spinner animation="border" variant='secondary'/></h4>
                 : <ItemDetail producto={producto}/>
             }
         </div>
