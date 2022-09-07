@@ -9,7 +9,7 @@ import {Link} from 'react-router-dom'
 
 
 
-const ItemCard = ({producto}) => {
+const ItemCard = ( {producto} ) => {
     return (
         <Link className='card-link' to={`/Product/${producto.id}`}>
             <Card sx={{ maxWidth: 320 }}>

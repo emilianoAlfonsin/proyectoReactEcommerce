@@ -4,7 +4,7 @@ import './ItemList.scss';
 
 
 
-const ItemList = ( {productos = []} ) => {
+const ItemList = ( { productos = [] } ) => {
 
     return (
         <div>
