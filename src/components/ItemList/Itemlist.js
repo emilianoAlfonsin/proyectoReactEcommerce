@@ -1,6 +1,6 @@
-import React from "react"
-import ItemCard from "../ItemCard/Itemcard"
-import './Itemlist.scss'
+import React from "react";
+import ItemCard from "../ItemCard/ItemCard";
+import './Itemlist.scss';
 
 
 

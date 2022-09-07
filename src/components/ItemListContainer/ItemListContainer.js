@@ -3,7 +3,7 @@ import ItemList from '../ItemList/Itemlist'
 import { useEffect, useState } from 'react'
 import { pedirDatos } from '../../helpers/pedirDatos'
 import { useParams } from 'react-router-dom'
-
+import Spinner from 'react-bootstrap/Spinner'
 
 
 const ItemListContainer = () => {
@@ -38,7 +38,7 @@ const ItemListContainer = () => {
       <div className='container'>
          {
             loading 
-            ? <h2>...</h2>
+            ? <Spinner animation="border" />
             : <ItemList productos={productos}/>
          }
       </div>
