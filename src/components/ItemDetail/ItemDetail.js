@@ -1,5 +1,5 @@
 import ItemCount from '../ItemCount/ItemCount'
-import { Divider, Select } from "@mui/material"
+import { Divider, Link, Select } from "@mui/material"
 import { useContext, useState } from "react";
 import './ItemDetail.scss'
 import CartContext from '../../context/CartContext';
@@ -15,6 +15,7 @@ const ItemDetail = ({product}) => {
             id: product.id,
             price: product.price,
             name: product.name,
+            img: product.img,
             quantity
         }
         addToCart(prodToCart)

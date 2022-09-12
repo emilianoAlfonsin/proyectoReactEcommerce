@@ -1,6 +1,7 @@
 
 import AddIcon from '@mui/icons-material/Add'
 import { Fab } from '@mui/material'
+import { Link } from 'react-router-dom'
 import './ItemCount.scss'
 
 
@@ -30,6 +31,9 @@ const ItemCount = ({stock, quantity, setQuantity, handleAddToCart}) => {
             <Fab color='primary' size="small" onClick={handleAdd}>+</Fab>
             <Fab color="primary" variant="extended" aria-label="add" onClick={handleAddToCart} className="add-to-cart">
                 <AddIcon sx={{ mr: 1 }} />Agregar
+            </Fab>
+            <Fab color="secondary" variant="extended" aria-label="add" onClick={handleAddToCart} className="add-to-cart">
+                <Link to='/Carrito'>Ir al carrito</Link>
             </Fab>
         </div>
     )
