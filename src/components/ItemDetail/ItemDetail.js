@@ -1,23 +1,44 @@
-import Button from 'react-bootstrap/Button'
-import Card  from "react-bootstrap/Card"
-import { Counter } from "../ItemCount/ItemCount"
+import ItemCount from '../ItemCount/ItemCount'
+import { Divider, Select } from "@mui/material"
+import { useContext, useState } from "react";
+import './ItemDetail.scss'
+import CartContext from '../../context/CartContext';
 
+const ItemDetail = ({product}) => {
 
-const ItemDetail = ({producto}) => {
+    const [quantity, setQuantity] = useState(1)
+    const {cart, addToCart} = useContext(CartContext)
+    console.log(cart)
+
+    const handleAddToCart = () => {
+        const prodToCart = {
+            id: product.id,
+            price: product.price,
+            name: product.name,
+            quantity
+        }
+        addToCart(prodToCart)
+    }
+
     return (
-        <div className="container">
-            <Card className="mx-auto d-flex" style={{ width: '24rem' }}>
-                <Card.Img variant="top" border="secondary" src={producto.img}/>
-                <Card.Body >
-                    <Card.Title>{producto.nombre}</Card.Title>
-                    <Card.Text>{producto.descripcion}</Card.Text>
-                    <Card.Text>Categoría: {producto.categoria}</Card.Text>
-                    <Card.Text>${producto.precio}</Card.Text>
-                    <Counter/>
-                    <Button variant="outlined-succes">Agregar producto</Button>
-                </Card.Body>
-            </Card>
-
+        <div className="card-container">
+            <div className="card-image">
+                <img src={product.img} alt={product.name}/>
+            </div>
+            <div className="card-title">
+                <h4>{product.name}</h4>
+                <Divider/>
+            </div>
+            <span className="price">Precio: ${product.price}</span>
+            <Select className="select"></Select>
+            <div className="card-desc">{product.desc}</div>
+            <div className="card-count">
+            <ItemCount 
+                stock={product.stock}
+                quantity={quantity} 
+                setQuantity={setQuantity}
+                handleAddToCart={handleAddToCart}/>
+            </div>
         </div>
     )
 }

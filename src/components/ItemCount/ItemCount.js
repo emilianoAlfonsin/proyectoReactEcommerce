@@ -1,30 +1,38 @@
 
-import Button from 'react-bootstrap/Button'
-import { useState } from "react";
+import AddIcon from '@mui/icons-material/Add'
+import { Fab } from '@mui/material'
 import './ItemCount.scss'
 
 
 
-export const Counter = () => {
+const ItemCount = ({stock, quantity, setQuantity, handleAddToCart}) => {
 
-    const [counter, setCounter] = useState(1)
 
-    const handleSumar = () => {
-        setCounter (counter + 1)
+    const handleAdd = () => {
+        if (quantity < stock) {
+            setQuantity (quantity + 1)
+        } else {
+            console.log("Agotado")
+        }
     }
 
-    const handleRestar = () => {
-        if ( counter > 1 ) {
-            setCounter (counter - 1)
+    const handleSubtract = () => {
+        if ( quantity > 1 ) {
+            setQuantity (quantity - 1)
         }
     }
 
     return (
         <div className="counter-container">
-            <h6 className="counter-title">Cantidad</h6>
-            <Button variant="oulined-secondary" size="sm" onClick={handleRestar}>-</Button>
-            <span className='mx-3'>{counter}</span>
-            <Button variant="oulined-secondary" size="sm" onClick={handleSumar}>+</Button>
+            <h5 className="counter-title">Cantidad</h5>
+            <Fab color='primary' size="small" onClick={handleSubtract}>-</Fab>
+            <span className='mx-3'>{quantity}</span>
+            <Fab color='primary' size="small" onClick={handleAdd}>+</Fab>
+            <Fab color="primary" variant="extended" aria-label="add" onClick={handleAddToCart} className="add-to-cart">
+                <AddIcon sx={{ mr: 1 }} />Agregar
+            </Fab>
         </div>
     )
 }
+
+export default ItemCount

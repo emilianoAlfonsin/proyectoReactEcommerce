@@ -4,14 +4,14 @@ import './ItemList.scss';
 
 
 
-const ItemList = ( { productos = [] } ) => {
+const ItemList = ( { products = [] } ) => {
 
     return (
         <div>
             <h2 className="catalog-title">Productos</h2>
             <hr/>
             <div className="catalog-container">
-                { productos.map((prod) => <ItemCard  producto={prod} key={prod.id}/>)} 
+                { products.map((prod) => <ItemCard  product={prod} key={prod.id}/>)} 
             </div>
         </div>
     )

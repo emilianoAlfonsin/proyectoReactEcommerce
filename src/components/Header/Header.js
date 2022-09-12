@@ -1,6 +1,6 @@
 import './Header.scss'
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from 'react-router-dom'
+import CartWidget from '../CartWidget/CartWidget'
 
 const Header = () => {
     return (
@@ -17,7 +17,7 @@ const Header = () => {
                     <Link className="navlink" to="/Tienda/juguetes" >Jugetes</Link>
                     <Link className="navlink" to="/Tienda/alimentacion" >Alimentación</Link>
                     <Link className="navlink" to="/Tienda/higiene" >Higiene</Link>
-                    <Link className='navlink' to='/Carrito' ><ShoppingCartIcon/></Link>
+                    <Link className='navlink' to='/Carrito' ><CartWidget/></Link>
                 </div>
             </div>
         </div>

@@ -8,7 +8,7 @@ import Spinner from 'react-bootstrap/Spinner';
 
 const ItemDetailContainer = () => {
 
-    const [producto, setProducto] = useState(null)
+    const [product, setproduct] = useState(null)
     const [loading, setLoading] = useState(true)
     const {prodId} = useParams()
     console.log(prodId)
@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
 
         pedirDatos()
             .then((res) => {
-                setProducto (res.find((prod)=> prod.id === Number(prodId)))
+                setproduct (res.find((prod)=> prod.id === Number(prodId)))
             })
             .catch (err => console.log(err))
             .finally ( () => {
@@ -31,8 +31,8 @@ const ItemDetailContainer = () => {
         <div >
             {
                 loading
-                ?   <h4>Cargando <Spinner animation="border" variant='secondary'/></h4>
-                : <ItemDetail producto={producto}/>
+                ?   <h4 className='text-center'>Cargando <Spinner animation="border" variant='secondary'/></h4>
+                : <ItemDetail product={product}/>
             }
         </div>
     )

@@ -8,7 +8,7 @@ import ItemList from '../ItemList/ItemList'
 
 const ItemListContainer = () => {
    
-   const [productos, setProductos] = useState([])
+   const [products, setproducts] = useState([])
    const [loading, setLoading] = useState(true)
    const {categoryId} = useParams()
 
@@ -19,9 +19,9 @@ const ItemListContainer = () => {
       pedirDatos()
          .then( (res) => {
             if (!categoryId) {
-               setProductos(res)
+               setproducts(res)
             }else{
-               setProductos(res.filter ((prod) => prod.categoria === categoryId))
+               setproducts(res.filter ((prod) => prod.category === categoryId))
             }
          })
          .catch( (error) => {
@@ -38,8 +38,8 @@ const ItemListContainer = () => {
       <div className='container'>
          {
             loading 
-            ? <Spinner animation="border" />
-            : <ItemList productos={productos}/>
+            ? <h4 className='text-center'>Cargando <Spinner animation="border" variant='secondary'/></h4>
+            : <ItemList products={products}/>
          }
       </div>
    )

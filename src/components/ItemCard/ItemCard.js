@@ -9,23 +9,23 @@ import {Link} from 'react-router-dom'
 
 
 
-const ItemCard = ( {producto} ) => {
+const ItemCard = ( {product} ) => {
     return (
-        <Link className='card-link' to={`/Product/${producto.id}`}>
+        <Link className='card-link' to={`/Product/${product.id}`}>
             <Card sx={{ maxWidth: 320 }}>
                 <CardActionArea>
                     <CardMedia
                     component="img"
                     height="200"
-                    image={producto.img}
-                    alt={producto.nombre}
+                    image={product.img}
+                    alt={product.name}
                     />
                     <CardContent>
                     <Typography  variant="h6" component="div">
-                        {producto.nombre}
+                        {product.name}
                     </Typography>
                     <Typography>
-                        $ {producto.precio}
+                        $ {product.price}
                     </Typography>
                     </CardContent>
                 </CardActionArea>
