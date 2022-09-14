@@ -1,14 +1,14 @@
 import ItemCount from '../ItemCount/ItemCount'
-import { Divider, Link, Select } from "@mui/material"
-import { useContext, useState } from "react";
+import { Divider, Fab } from "@mui/material"
+import { useState } from "react";
 import './ItemDetail.scss'
-import CartContext from '../../context/CartContext';
+import { useCartContext } from '../../context/CartContext';
+import { Link } from 'react-router-dom';
 
 const ItemDetail = ({product}) => {
 
     const [quantity, setQuantity] = useState(1)
-    const {cart, addToCart} = useContext(CartContext)
-    console.log(cart)
+    const { addToCart, isInCart } = useCartContext()
 
     const handleAddToCart = () => {
         const prodToCart = {
@@ -31,14 +31,24 @@ const ItemDetail = ({product}) => {
                 <Divider/>
             </div>
             <span className="price">Precio: ${product.price}</span>
-            <Select className="select"></Select>
-            <div className="card-desc">{product.desc}</div>
+            {/* <Select className="select"></Select> */}
+            <div className="card-desc">{product.desc}
+                <Divider/>
+            </div>
             <div className="card-count">
-            <ItemCount 
-                stock={product.stock}
-                quantity={quantity} 
-                setQuantity={setQuantity}
-                handleAddToCart={handleAddToCart}/>
+
+            {
+                isInCart(product.id)
+                ?   <Fab color="secondary" variant="extended" aria-label="link" className="add-to-cart">
+                        <Link to='/Carrito' sx={{ textDecoration: 'none' }}>Ir al carrito</Link>
+                    </Fab>                   
+                :   <ItemCount 
+                        stock={product.stock}
+                        quantity={quantity} 
+                        setQuantity={setQuantity}
+                        handleAddToCart={handleAddToCart}
+                    />
+            }
             </div>
         </div>
     )

@@ -1,9 +1,13 @@
 import { Badge } from "@mui/material"
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
+import { useCartContext } from "../../context/CartContext"
 
-export const CartWidget = () => {
+const CartWidget = () => {
+
+    const { cartQuantity } = useCartContext()
+
     return (
-        <Badge badgeContent={4} color="success">
+        <Badge badgeContent={cartQuantity()} color="success">
             <ShoppingCartIcon color="action" />
         </Badge>
     )

@@ -1,55 +1,27 @@
-import { Avatar, IconButton, List, ListItem, ListItemAvatar, ListItemText, Typography } from "@mui/material"
-import { useContext } from "react"
-import DeleteIcon from '@mui/icons-material/Delete'
-import CartContext from "../../context/CartContext"
 
+import {useCartContext} from "../../context/CartContext"
+import CartItem from "../CartItem/CartItem"
+import { Fab, List, Paper } from "@mui/material"
 
 
 const Cart = () => {
 
-    const { cart } = useContext(CartContext)
+    const { cart, emptyCart, cartTotal } = useCartContext()
+
     return (
         <div className="container">
             <h2 className="text-center">Carrito de compras</h2>
             <hr/>
-            <List sx={{ width: '100%', maxWidth: 740, bgcolor:'background.paper'}}>
+            <List sx={{ width: '100%', maxWidth: 740}}>
                 {
                     cart.map( (prod) => (
-                        <ListItem key={prod.id} alignItems="flex-start">
-                            <ListItemAvatar >
-                                <Avatar src={prod.img}/>
-                            </ListItemAvatar>
-                            <ListItemText
-                            primary={prod.name}
-                            secondary={
-                                <Typography
-                                    sx={{ display: 'inline' }}
-                                    component="span"
-                                    variant="body2"
-                                    color="text.primary"
-                                >
-                                    Precio unitario: ${prod.price}
-                                </Typography>
-                            }
-                            />
-                            <ListItemText
-                            primary={
-                                <Typography>
-                                    Cantidad: {prod.quantity}
-                                </Typography>
-                            }
-                            secondary={
-                                <Typography>
-                                    Subtotal: ${prod.quantity*prod.price}
-                                </Typography>
-                            }/>
-                            <IconButton edge="end" aria-label="delete">
-                                <DeleteIcon />
-                            </IconButton>
-                        </ListItem>
-                        
+                        <CartItem prod={prod} key={prod.id}/>
                 ))}
             </List>
+            
+            <Fab onClick={emptyCart} variant="extended" color="error" sx={{mt:2}}>Vaciar carrito</Fab>
+
+            <Paper elevation={3} sx={{mt:2, width:640, fontSize:20}}>Total a pagar: ${cartTotal}</Paper>
         </div>
     )
 }
