@@ -1,0 +1,30 @@
+.cart-container {
+    .cart-title{
+        text-align: center;
+    }
+    
+    .cart-total-container{
+        display: flex;
+        justify-content: flex-end;
+        .cart-btn-empty{
+            margin: 1rem;
+        }
+        .cart-show-total{
+            margin: 1rem;
+            justify-content: center;
+            .paper-title{
+                margin: 1rem;
+                font-weight: 500;
+                font-style: italic;
+            }
+            .paper-content{
+                margin: 1rem;
+                font-style: italic;
+            }
+        }
+    }
+    .btn-to-store{
+        text-decoration: none;
+        color: #fff;
+    }
+}

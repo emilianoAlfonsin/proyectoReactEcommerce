@@ -1,4 +1,4 @@
-import { Avatar, IconButton, ListItem, ListItemAvatar, ListItemText, Typography } from "@mui/material"
+import { Avatar, IconButton, ListItem, ListItemAvatar, ListItemText, Paper, Typography } from "@mui/material"
 import DeleteIcon from '@mui/icons-material/Delete'
 import { useCartContext } from "../../context/CartContext"
 
@@ -8,7 +8,7 @@ const CartItem = ({prod}) => {
 
     return (
 
-        <ListItem  alignItems="flex-start" sx={{ bgcolor:'background.paper'}}>
+        <ListItem  alignItems="flex-start" component={Paper} sx={{margin:1, bgcolor:'background.paper'}}>
             <ListItemAvatar >
                 <Avatar src={prod.img}/>
             </ListItemAvatar>

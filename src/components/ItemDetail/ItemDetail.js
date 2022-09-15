@@ -1,5 +1,6 @@
 import ItemCount from '../ItemCount/ItemCount'
 import { Divider, Fab } from "@mui/material"
+import AddIcon from '@mui/icons-material/Add'
 import { useState } from "react";
 import './ItemDetail.scss'
 import { useCartContext } from '../../context/CartContext';
@@ -40,14 +41,18 @@ const ItemDetail = ({product}) => {
             {
                 isInCart(product.id)
                 ?   <Fab color="secondary" variant="extended" aria-label="link" className="add-to-cart">
-                        <Link to='/Carrito' sx={{ textDecoration: 'none' }}>Ir al carrito</Link>
+                        <Link to='/Carrito' className='btn-to-cart'>Finalizar compra</Link>
                     </Fab>                   
-                :   <ItemCount 
-                        stock={product.stock}
-                        quantity={quantity} 
-                        setQuantity={setQuantity}
-                        handleAddToCart={handleAddToCart}
-                    />
+                :   <>
+                        <ItemCount 
+                            stock={product.stock}
+                            quantity={quantity} 
+                            setQuantity={setQuantity}
+                        />
+                        <Fab color="primary" variant="extended" aria-label="add" onClick={handleAddToCart} className="add-to-cart">
+                            <AddIcon sx={{ mr: 1 }} />Agregar
+                        </Fab>
+                    </>
             }
             </div>
         </div>

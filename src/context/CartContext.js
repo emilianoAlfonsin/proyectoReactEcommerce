@@ -17,7 +17,25 @@ export const CartProvider = ({children}) => {
     }
 
     const removeProd = (id) => {
-        setCart( cart.filter((prod) => prod.id !== id) )
+        Swal.fire({
+            title: 'Querés quitar este producto?',
+            text: "Eliminarás este producto de tu lista de compras",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Quitar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+            Swal.fire(
+                'Listo!',
+                'Eliminaste este producto de tu lista de compras',
+                'success'
+            )
+            setCart( cart.filter((prod) => prod.id !== id) )
+            }  
+        })
     }
 
     const emptyCart = () => {
@@ -47,7 +65,7 @@ export const CartProvider = ({children}) => {
     }
 
     const cartTotal = () => {
-        return cart.reduce((acc, prod) => acc + prod.price * prod.price, 0)
+        return cart.reduce((acc, prod) => acc + prod.price * prod.quantity, 0)
     }
 
 
