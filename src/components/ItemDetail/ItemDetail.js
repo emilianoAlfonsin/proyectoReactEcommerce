@@ -1,10 +1,10 @@
-import ItemCount from '../ItemCount/ItemCount'
 import { Divider, Fab } from "@mui/material"
 import AddIcon from '@mui/icons-material/Add'
-import { useState } from "react";
 import './ItemDetail.scss'
 import { useCartContext } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
+import { useState } from "react";
+import ItemCount from "../ItemCount/ItemCount";
 
 const ItemDetail = ({product}) => {
 
@@ -17,7 +17,8 @@ const ItemDetail = ({product}) => {
             price: product.price,
             name: product.name,
             img: product.img,
-            quantity
+            stock: product.stock,
+            quantity 
         }
         addToCart(prodToCart)
     }
@@ -32,19 +33,19 @@ const ItemDetail = ({product}) => {
                 <Divider/>
             </div>
             <span className="price">Precio: ${product.price}</span>
+            <span>Stock disponible: {product.stock}</span>
             {/* <Select className="select"></Select> */}
             <div className="card-desc">{product.desc}
                 <Divider/>
             </div>
             <div className="card-count">
-
             {
                 isInCart(product.id)
                 ?   <Fab color="secondary" variant="extended" aria-label="link" className="add-to-cart">
                         <Link to='/Carrito' className='btn-to-cart'>Finalizar compra</Link>
-                    </Fab>                   
+                    </Fab>
                 :   <>
-                        <ItemCount 
+                        <ItemCount
                             stock={product.stock}
                             quantity={quantity} 
                             setQuantity={setQuantity}

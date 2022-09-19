@@ -1,7 +1,7 @@
-import { Fab } from '@mui/material'
-
+import { IconButton } from '@mui/material'
+import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
+import RemoveCircleRoundedIcon from '@mui/icons-material/RemoveCircleRounded';
 import './ItemCount.scss'
-
 
 
 const ItemCount = ({stock, quantity, setQuantity}) => {
@@ -23,10 +23,10 @@ const ItemCount = ({stock, quantity, setQuantity}) => {
 
     return (
         <div className="counter-container">
-            <h5 className="counter-title">Cantidad</h5>
-            <Fab color='primary' size="small" onClick={handleSubtract}>-</Fab>
+            <p className="counter-title">Cantidad</p>
+            <IconButton color='primary' size="small" onClick={handleSubtract}><RemoveCircleRoundedIcon/></IconButton>
             <span className='mx-3'>{quantity}</span>
-            <Fab color='primary' size="small" onClick={handleAdd}>+</Fab>
+            <IconButton color='primary' size="small" onClick={handleAdd}><AddCircleRoundedIcon/></IconButton>
         </div>
     )
 }

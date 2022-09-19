@@ -1,6 +1,7 @@
 import './Header.scss'
 import { Link } from 'react-router-dom'
 import CartWidget from '../CartWidget/CartWidget'
+import { Divider } from '@mui/material'
 
 const Header = () => {
     return (
@@ -14,9 +15,13 @@ const Header = () => {
                 <div className="navbar">
                     {/* <Link className="navlink" to="/" >Home</Link> */}
                     <Link className="navlink" to="/" >Tienda</Link>
+                    <Divider orientation="vertical" variant="middle" flexItem color="black" />
                     <Link className="navlink" to="/Tienda/juguetes" >Juguetes</Link>
+                    <Divider orientation="vertical" variant="middle" flexItem color="black" />
                     <Link className="navlink" to="/Tienda/alimentacion" >Alimentación</Link>
+                    <Divider orientation="vertical" variant="middle" flexItem color="black" />
                     <Link className="navlink" to="/Tienda/higiene" >Higiene</Link>
+                    <Divider orientation="vertical" variant="middle" flexItem color="black" />
                     <Link className='navlink' to='/Carrito' ><CartWidget/></Link>
                 </div>
             </div>

@@ -2,9 +2,10 @@ import { Avatar, IconButton, ListItem, ListItemAvatar, ListItemText, Paper, Typo
 import DeleteIcon from '@mui/icons-material/Delete'
 import { useCartContext } from "../../context/CartContext"
 
+
 const CartItem = ({prod}) => {
 
-    const { removeProd } = useCartContext()
+    const { removeProd } = useCartContext()    
 
     return (
 
@@ -32,7 +33,12 @@ const CartItem = ({prod}) => {
                 </Typography>
             }
             secondary={
-                <Typography>
+                <Typography
+                sx={{ display: 'inline' }}
+                component="span"
+                variant="body2"
+                color="text.primary"
+                >
                     Subtotal: ${prod.quantity*prod.price}
                 </Typography>
             }/>

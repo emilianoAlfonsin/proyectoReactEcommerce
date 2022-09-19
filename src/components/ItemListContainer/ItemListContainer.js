@@ -1,9 +1,10 @@
-import './ItemListContainer.scss'
 import { useEffect, useState } from 'react'
-import { pedirDatos } from '../../helpers/pedirDatos'
 import { useParams } from 'react-router-dom'
-import Spinner from 'react-bootstrap/Spinner'
+import { collection, getDocs, query, where } from 'firebase/firestore'
+import { db } from '../../firebase/config'
+import Loader from '../Loader/Loader'
 import ItemList from '../ItemList/ItemList'
+import './ItemListContainer.scss'
 
 
 const ItemListContainer = () => {
@@ -16,20 +17,18 @@ const ItemListContainer = () => {
    useEffect(() => {
       setLoading(true)
 
-      pedirDatos()
-         .then( (res) => {
-            if (!categoryId) {
-               setproducts(res)
-            }else{
-               setproducts(res.filter ((prod) => prod.category === categoryId))
-            }
+      const productsRef = collection(db, 'Products')
+      const q = categoryId 
+                  ? query(productsRef, where( 'category', '==', categoryId))
+                  : productsRef
+                  
+      getDocs(q)
+         .then( (resp) =>{
+            const productsDB = resp.docs.map((doc) => ({ id: doc.id, ...doc.data()}))
+            setproducts( productsDB )
          })
-         .catch( (error) => {
-               console.log(error)
-         })
-         .finally(() => {
-            setLoading(false)
-         })
+         .finally( setLoading(false) )
+
    }, [categoryId])
 
 
@@ -38,7 +37,7 @@ const ItemListContainer = () => {
       <div className='container'>
          {
             loading 
-            ? <h4 className='text-center'>Cargando <Spinner animation="border" variant='secondary'/></h4>
+            ? <Loader/>
             : <ItemList products={products}/>
          }
       </div>

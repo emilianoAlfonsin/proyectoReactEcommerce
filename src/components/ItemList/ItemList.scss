@@ -1,10 +1,12 @@
 .catalog-title {
     text-align: center;
+    font-family: 'Atma', cursive;
+    font-weight: 600;
 }
 
 .catalog-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat( auto-fill, minmax( 10rem, 1fr ));
     gap: 3rem;  
     grid-auto-rows: minmax(150px, auto);
 }
