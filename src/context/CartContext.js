@@ -75,6 +75,19 @@ export const CartProvider = ({children}) => {
         return cart.reduce((acc, prod) => acc + prod.price * prod.quantity, 0)
     }
 
+    const finishPurchaseSwal = (id) => {
+        Swal.fire({
+            icon: 'success',
+            title: 'Tu compra fue exitosa!',
+            text: `Tu número de orden es ${id}`,
+            footer: 'Por favor guarda este número para cualquier consulta'
+        })
+    }
+
+    const finishPurchase = () => {
+        setCart([])
+    }
+
     useEffect(() => {
         localStorage.setItem('carInit', JSON.stringify(cart))
     }, [cart])
@@ -88,7 +101,9 @@ export const CartProvider = ({children}) => {
             emptyCart,
             cartQuantity,
             isInCart,
-            cartTotal
+            cartTotal,
+            finishPurchase,
+            finishPurchaseSwal
             }}>
             {children}
         </CartContext.Provider>

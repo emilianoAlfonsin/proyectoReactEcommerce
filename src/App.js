@@ -8,6 +8,8 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Cart from './components/Cart/Cart';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { CartProvider } from './context/CartContext'
+import { LoginProvider } from './context/LoginContext';
+import Checkout from './components/Checkout/Checkout';
 
 
 
@@ -18,24 +20,27 @@ const App = () => {
 
   return (
 
-    <CartProvider>
+    // <LoginProvider>
+      <CartProvider>
 
-      <BrowserRouter>
-      
-        <Header/>
+        <BrowserRouter>
+        
+          <Header/>
 
-        <Routes>
-          {/* <Route path='/' element={<Home/>} /> */}
-          <Route path='/' element={<ItemListContainer/>} />
-          <Route path='/Tienda/:categoryId' element={<ItemListContainer/>} />
-          <Route path='/Product/:prodId' element={<ItemDetailContainer/>} />
-          <Route path='/Carrito' element={<Cart/>} />
-          <Route path='*' element={<Navigate to='/' />} />
-        </Routes>
-      
-      </BrowserRouter>
+          <Routes>
+            {/* <Route path='/' element={<Home/>} /> */}
+            <Route path='/' element={<ItemListContainer/>} />
+            <Route path='/Tienda/:categoryId' element={<ItemListContainer/>} />
+            <Route path='/Product/:prodId' element={<ItemDetailContainer/>} />
+            <Route path='/Carrito' element={<Cart/>} />
+            <Route path='/Checkout' element={<Checkout/>} />
+            <Route path='*' element={<Navigate to='/' />} />
+          </Routes>
+        
+        </BrowserRouter>
 
-    </CartProvider>
+      </CartProvider>
+    // </LoginProvider>
   )
 }
 

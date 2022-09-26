@@ -11,6 +11,14 @@
         .cart-btn-empty{
             margin: 1rem;
         }
+        .cart-checkout-btn {
+            margin: 1rem;
+            .cart-checkout-link {
+                text-decoration: none;
+                color: #fff;
+            }
+        }
+        
         .cart-show-total{
             margin: 1rem;
             justify-content: center;

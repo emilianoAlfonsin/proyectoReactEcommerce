@@ -34,7 +34,7 @@ const ItemListContainer = () => {
 
 
    return (
-      <div className='container'>
+      <div className='catalog-sheet'>
          {
             loading 
             ? <Loader/>
