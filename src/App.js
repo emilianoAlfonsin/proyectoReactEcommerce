@@ -10,6 +10,9 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { CartProvider } from './context/CartContext'
 import { LoginProvider } from './context/LoginContext';
 import Checkout from './components/Checkout/Checkout';
+import Navbar from './components/Navbar/Navbar';
+import Home from './components/Home/Home';
+
 
 
 
@@ -24,12 +27,13 @@ const App = () => {
       <CartProvider>
 
         <BrowserRouter>
-        
-          <Header/>
+
+          <Navbar/>
+          {/* <Header/> */}
 
           <Routes>
-            {/* <Route path='/' element={<Home/>} /> */}
-            <Route path='/' element={<ItemListContainer/>} />
+            <Route path='/' element={<Home/>} />
+            <Route path='/Tienda' element={<ItemListContainer/>} />
             <Route path='/Tienda/:categoryId' element={<ItemListContainer/>} />
             <Route path='/Product/:prodId' element={<ItemDetailContainer/>} />
             <Route path='/Carrito' element={<Cart/>} />

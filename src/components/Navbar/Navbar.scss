@@ -1,0 +1,31 @@
+.header {
+    margin: 0 12rem;
+    padding: 20px 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.header-logo {
+    max-width: 5rem;
+
+    .navbar {
+        justify-content: space-around;
+        
+        .navlink {
+            margin: 1rem 1rem;
+            color: rgb(97, 94, 94);
+            text-decoration: none;
+            font-family: 'Atma', cursive;
+            font-weight: 400;
+            font-size: larger;
+            &:hover{
+            transform: scale(1.2);
+            transition: all 400ms;
+            text-shadow: 3px 3px 3px #fff;
+            }
+        }
+            
+    }
+}

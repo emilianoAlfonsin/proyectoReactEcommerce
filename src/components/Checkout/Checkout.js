@@ -1,10 +1,9 @@
-import { Fab, Grid, Paper, TextField } from "@mui/material"
 import { useState } from "react"
 import { Navigate } from "react-router-dom"
 import { useCartContext } from "../../context/CartContext"
 import { collection, addDoc } from "firebase/firestore"
 import { db } from "../../firebase/config"
-// import FormCheckout from "../Forms/FormCheckout"
+import FormCheckout from "../Forms/FormCheckout"
 import './Checkout.scss'
 
 const Checkout = () => {
@@ -54,63 +53,7 @@ const Checkout = () => {
         <div className="checkout-container">
             <h2 className="checkout-title">Finalizá tu compra</h2>
             <hr/>
-
-            <Paper
-                component="form"
-                sx={{
-                    '& .MuiTextField-root': { m: 2, width: '40%' },
-                    flexGrow: 1
-                }}
-                autocomplete off
-                className="form-chekout-container"
-                onSubmit={handleSubmit}
-                >
-                <Grid item xs="auto" display="flex" justifyContent="center">
-                    <TextField
-                        required
-                        id = "user"
-                        label = "Nombre completo"
-                        color="secondary"
-                        className="checkout-imput"
-                        onChange={handleImputChange}
-                        />    
-                </Grid>
-                <Grid item xs="auto" display="flex" justifyContent="center">
-                    <TextField
-                        required
-                        id = "email"
-                        label = "Email"
-                        type="email"
-                        color="secondary"
-                        className="checkout-imput"
-                        onChange={handleImputChange}
-                        />
-                </Grid>
-                <Grid item xs="auto" display="flex" justifyContent="center">
-                    <TextField
-                        required
-                        id = "telephone"
-                        label = "Teléfono"
-                        color="secondary"
-                        className="checkout-imput"
-                        onChange={handleImputChange}
-                        />
-                </Grid>
-                <Grid item xs="auto" display="flex" justifyContent="center">
-                    <TextField
-                        required
-                        id = "adress"
-                        label = "Dirección"
-                        color="secondary"
-                        className="checkout-imput"
-                        onChange={handleImputChange}
-                        />
-                </Grid>
-                <Grid item display="flex" justifyContent="center" >
-                    <Fab type="submit" variant="extended" color="secondary" sx={{m:3}}>Enviar</Fab>
-                </Grid>
-            </Paper>
-            {/* <FormCheckout onSubmit={handleSubmit}/> */}
+            <FormCheckout handleSubmit={handleSubmit} handleImputChange={handleImputChange}/>
         </div>
     )
 }
