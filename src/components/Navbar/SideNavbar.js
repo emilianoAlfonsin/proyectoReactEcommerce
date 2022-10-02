@@ -1,11 +1,6 @@
-import { Box,
-    Divider, 
-    List, 
-    ListItem, 
-    ListItemButton, 
-    ListItemText 
-    } from "@mui/material"
+import { Box,Divider, List, ListItem, ListItemButton, ListItemText } from "@mui/material"
 import { Link } from "react-router-dom"
+import CartWidget from "../CartWidget/CartWidget"
 
 
 const SideNavbar = ({navItems, handleDrawerToggle}) => {
@@ -23,6 +18,11 @@ const SideNavbar = ({navItems, handleDrawerToggle}) => {
                         </ListItemButton>
                     </ListItem>
                 ))}
+                <ListItem>
+                    <ListItemButton component={Link} to="/Carrito" sx={{ display: 'flex', justifyContent: 'center' }} >
+                        <CartWidget/>
+                    </ListItemButton>
+                </ListItem>
             </List>
         </Box>
     )

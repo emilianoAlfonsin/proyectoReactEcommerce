@@ -1,19 +1,21 @@
 import { AppBar, Box, Button, IconButton, Toolbar } from "@mui/material"
 import MenuIcon from '@mui/icons-material/Menu'
 import { Link } from "react-router-dom"
+import CartWidget from "../CartWidget/CartWidget"
 
 
 const TopNavbar = ({navItems, handleDrawerToggle}) => {
     return (
-        <AppBar component="nav" position="static" sx={{ marginBottom: 2 }}>
+        <>
+            <AppBar component="nav" position="fixed" color="secondary" sx={{ opacity: 0.9 }}>
                 <Toolbar>
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
-                        edge="start"
                         onClick={handleDrawerToggle}
-                        sx={{ mr: 2, display: { sm: 'none' } }}
-                    >
+                        edge="start"
+                        sx={{ display: { sm: 'none' } }}
+                        >
                         <MenuIcon/>
                     </IconButton>
                     <Link className="header-logo" to="/">
@@ -21,13 +23,18 @@ const TopNavbar = ({navItems, handleDrawerToggle}) => {
                     </Link>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
-                        <Button key={item} component={Link} sx={{ color: '#fff' }} to={`/${item}`}>
+                            <Button key={item} component={Link} sx={{ color: '#fff' }} to={`/${item}`}>
                             {item}
                         </Button>
                         ))}
+                        <Button component={Link} to="/Carrito">
+                            <CartWidget/>
+                        </Button>
                     </Box>
                 </Toolbar>
             </AppBar>
+            <Toolbar sx={{marginBottom: 3}}/>
+        </>
     )
 }
 

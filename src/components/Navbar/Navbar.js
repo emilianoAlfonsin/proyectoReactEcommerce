@@ -1,12 +1,12 @@
 import './Navbar.scss'
 import { useState } from 'react'
 import { Box, Drawer } from '@mui/material'
-import CartWidget from '../CartWidget/CartWidget'
 import SideNavbar from './SideNavbar'
 import TopNavbar from './TopNavbar'
+import Header from '../Header/Header'
 
 const drawerWidth = 200;
-const navItems = ['Home', 'Tienda', 'Nosotros', 'Contacto', <CartWidget/>]
+const navItems = ['Home', 'Tienda', 'Nosotros', 'Contacto']
 
 const Navbar = (props) => {
     const { window } = props
@@ -21,6 +21,7 @@ const Navbar = (props) => {
     return (
         <Box sx={{ display: 'flex' }}>
             <TopNavbar navItems={navItems} handleDrawerToggle={handleDrawerToggle}/>
+            {/* <Header/> */}
             <Box component="nav">
                 <Drawer
                     container={container}
