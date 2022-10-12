@@ -1,3 +1,10 @@
 .card-link {
     text-decoration: none;
+    .card{
+        &:hover{
+            transform: scale(1.01);
+            transition: all 0.1s;
+            box-shadow: 10px 10px rgba(0, 0, 0, 0.1);
+        }
+    }
 }

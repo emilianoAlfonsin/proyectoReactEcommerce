@@ -1,32 +1,56 @@
 import './Header.scss'
 import { Link } from 'react-router-dom'
 import CartWidget from '../CartWidget/CartWidget'
-import { Divider } from '@mui/material'
+import { Nav, Container, Navbar, NavDropdown, Dropdown, NavLink, NavItem } from 'react-bootstrap';
+import LoginModal from '../LoginModal/LoginModal';
+import SignupModal from '../Signup/SignupModal';
+
 
 const Header = () => {
+
+
     return (
-        <div className="header-container">
-            <div className="header">
-                <div className="header-logo">
-                    <Link className="navlink" to="/">
+        <>
+            <Navbar className='header-container sticky-top' bg="light" expand="lg">
+                <Container className='header' >
+                    <Navbar.Brand as={Link} to="/" >
                         <img className="header-logo" src="/assets/logo/logo-full.png" alt="logo"/>
-                    </Link>
-                </div>
-                <div className="navbar">
-                    {/* <Link className="navlink" to="/" >Home</Link> */}
-                    <Link className="navlink" to="/" >Tienda</Link>
-                    <Divider orientation="vertical" variant="middle" flexItem color="black" />
-                    <Link className="navlink" to="/Tienda/juguetes" >Juguetes</Link>
-                    <Divider orientation="vertical" variant="middle" flexItem color="black" />
-                    <Link className="navlink" to="/Tienda/alimentacion" >Alimentación</Link>
-                    <Divider orientation="vertical" variant="middle" flexItem color="black" />
-                    <Link className="navlink" to="/Tienda/higiene" >Higiene</Link>
-                    <Divider orientation="vertical" variant="middle" flexItem color="black" />
-                    <Link className='navlink' to='/Carrito' ><CartWidget/></Link>
-                </div>
-            </div>
-        </div>
-    )
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+                        <Nav >
+                            <NavLink as={Link} to="/" >Home</NavLink>
+                            <NavDropdown title="Tienda" id="basic-nav-dropdown" className='navlink'>
+                                <NavDropdown.Item as={Link} to="/Tienda" >
+                                    Todos los productos                    
+                                </NavDropdown.Item>
+                                <Dropdown.Divider/>
+                                <NavDropdown.Item as={Link} to="/Tienda/juguetes" >                            
+                                    Juguetes                    
+                                </NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to="/Tienda/alimentacion" >                            
+                                    Alimentación                    
+                                </NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to="/Tienda/higiene" >                            
+                                    Higiene                    
+                                </NavDropdown.Item>
+                            </NavDropdown>
+                            <NavLink as={Link} to="/Nosotros" >Nosotros</NavLink>
+                            <NavLink as={Link} to="/Contacto" >Contacto</NavLink>
+                            <NavLink as={Link} to='/Carrito' ><CartWidget/></NavLink>
+                            <NavItem className='nav-link'>                                
+                                <LoginModal/>
+                            </NavItem>
+                            <NavItem className='nav-link'>                                
+                                <SignupModal/>
+                            </NavItem>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+        </>
+    );
 }
+
 
 export default Header

@@ -1,35 +1,26 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import Home from './components/Home/Home';
+import Home from './components/Home/Home';
 import Header from './components/Header/Header';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
+import Checkout from './components/Checkout/Checkout';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { CartProvider } from './context/CartContext'
 import { LoginProvider } from './context/LoginContext';
-import Checkout from './components/Checkout/Checkout';
-import Navbar from './components/Navbar/Navbar';
-import Home from './components/Home/Home';
-
-
-
-
 
 const App = () => {
 
-  
-
   return (
 
-    // <LoginProvider>
+    <LoginProvider>
       <CartProvider>
 
         <BrowserRouter>
 
-          <Navbar/>
-          {/* <Header/> */}
+          <Header/>
 
           <Routes>
             <Route path='/' element={<Home/>} />
@@ -44,7 +35,7 @@ const App = () => {
         </BrowserRouter>
 
       </CartProvider>
-    // </LoginProvider>
+    </LoginProvider>
   )
 }
 

@@ -12,7 +12,7 @@ import {Link} from 'react-router-dom'
 const ItemCard = ( {product} ) => {
     return (
         <Link className='card-link' to={`/Product/${product.id}`}>
-            <Card sx={{ maxWidth: 420, height: '100%'}}>
+            <Card className='card' sx={{ maxWidth: 420, height: '100%'}}>
                 <CardActionArea>
                     <CardMedia
                     component="img"

@@ -41,7 +41,6 @@ const Checkout = () => {
                 finishPurchaseSwal(doc.id)
                 finishPurchase()
             })
-
         console.log(purchaseOrder)
     }
 

@@ -14,11 +14,6 @@ export const CartProvider = ({children}) => {
         setCart([...cart, prod])
     }
 
-    // const increaseQuantity = () => {
-    //     const newCart = [...cart]
-    //     cart 
-    // }
-
     const isInCart = (id) => {
         return cart.some((prod) => prod.id === id)
     }
