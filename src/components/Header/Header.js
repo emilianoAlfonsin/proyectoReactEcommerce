@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import CartWidget from '../CartWidget/CartWidget'
 import { Nav, Container, Navbar, NavDropdown, Dropdown, NavLink, NavItem } from 'react-bootstrap';
 import LoginModal from '../LoginModal/LoginModal';
-import SignupModal from '../Signup/SignupModal';
+import SignModal from '../SignModal/SignModal';
 
 
 const Header = () => {
@@ -39,11 +39,11 @@ const Header = () => {
                             <NavLink as={Link} to="/Contacto" >Contacto</NavLink>
                             <NavLink as={Link} to='/Carrito' ><CartWidget/></NavLink>
                             <NavItem className='nav-link'>                                
-                                <LoginModal/>
+                                <SignModal/>
                             </NavItem>
-                            <NavItem className='nav-link'>                                
+                            {/* <NavItem className='nav-link'>                                
                                 <SignupModal/>
-                            </NavItem>
+                            </NavItem> */}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
